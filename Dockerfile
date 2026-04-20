@@ -19,7 +19,7 @@ COPY . .
 
 RUN composer install --optimize-autoloader --no-scripts --no-interaction
 
-RUN php artisan storage:link
+RUN php artisan storage:link --no-interaction
 
 EXPOSE 8000
 
