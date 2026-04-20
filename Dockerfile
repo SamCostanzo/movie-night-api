@@ -19,8 +19,8 @@ COPY . .
 
 RUN composer install --optimize-autoloader --no-scripts --no-interaction
 
-RUN php artisan storage:link --no-interaction
+RUN chmod +x start.sh
 
 EXPOSE 8000
 
-CMD php -S 0.0.0.0:$PORT -t public
+CMD ["/bin/bash", "/app/start.sh"]
